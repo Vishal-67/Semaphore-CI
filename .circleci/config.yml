@@ -20,7 +20,7 @@ jobs:
       - checkout
       - run:
           name: "Say hello"
-          command: "echo Hello, World! && python3 hello.py && git clone https://go.googlesource.com/go goroot && cd goroot && git checkout go1.22.0 && cd src && ./all.bash && go run go.go"
+          command: "echo Hello, World! && python3 hello.py"
 
 
 # Orchestrate jobs using workflows
