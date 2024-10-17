@@ -20,19 +20,8 @@ jobs:
       - checkout
       - run:
           name: "Say hello"
-          command: "echo Hello, World! && python3 hello.py"
+          command: "echo Hello, World! && python3 hello.py && git clone https://go.googlesource.com/go goroot && cd goroot && git checkout go1.22.0 && cd src && ./all.bash && go run go.go"
 
-      # Download and install Go
-      - install
-      - run:
-          name: "download & install go"
-          command: "git clone https://go.googlesource.com/go goroot && cd goroot && git checkout go1.22.0 && cd src && ./all.bash"
-
-      # Run go program
-      - run go 
-      - run:
-          name: "run go program"
-          command: "go run go.go"
 
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/workflows/ & https://circleci.com/docs/configuration-reference/#workflows
