@@ -1,7 +1,12 @@
 name: Manual Workflow
 
 on:
-  workflow_dispatch
+  workflow_dispatch:
+    inputs:
+      commit_id:
+        description: 'Commit ID to trigger the workflow'
+        required: true
+        default: ''
 
 jobs:
   deploy:
